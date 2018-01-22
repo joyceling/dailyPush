@@ -1,6 +1,6 @@
 public class StringManipulation {
 
-    public String reverseAString(String string) {
+    public static String reverseAString(String string) {
         int length = string.length();
         StringBuilder stringBuilder = new StringBuilder();
 
@@ -14,8 +14,8 @@ public class StringManipulation {
 
     }
 
-    public void checkIfPalindrome(String string) {
-        if (string != null && string.length() > 0) {
+    public static void checkIfPalindrome(String string) {
+        OUTER_LOOP: if (string != null && string.length() > 0) {
             boolean isPalindrome = false;
             int length = string.length();
             int last = string.length()-1;
@@ -34,7 +34,7 @@ public class StringManipulation {
             for (int i = 0; i <= length - 1; i++) {
                 if (!matchingArray[i]) {
                     System.out.println("This is not a palindrome.");
-                    break;
+                    break OUTER_LOOP;
                 }
             }
 
@@ -43,6 +43,34 @@ public class StringManipulation {
         } else {
             System.out.println("This is not a valid string.");
         }
+
+    }
+
+    public static String convertToPigLatin (String string) {
+        StringBuilder stringBuilder = new StringBuilder(string);
+        char[] vowels = {'a', 'e', 'i', 'o','u'};
+
+        for (int i = 0; i < string.length(); i++) {
+
+            if (string.charAt(0) == vowels[i]) {
+
+                stringBuilder.append("ay");
+
+            } else {
+
+                if (string.charAt(i) == vowels[i]) {
+
+                    String firstHalf = string.substring(string.indexOf(string.charAt(i)));
+                    String secondHalf = string.charAt(0) + "ay";
+
+                    System.out.println(firstHalf + secondHalf);
+                }
+            }
+        }
+
+
+
+        return stringBuilder.toString();
 
     }
 

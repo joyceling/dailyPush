@@ -1,10 +1,27 @@
 public class Main {
     public static void main(String[] args) {
-        StringManipulation stringManipulation = new StringManipulation();
-        System.out.println(stringManipulation.reverseAString("hello"));
-        stringManipulation.checkIfPalindrome("hannah");
-        stringManipulation.checkIfPalindrome("");
-        stringManipulation.checkIfPalindrome(null);
+        System.out.println(StringManipulation.reverseAString("hello"));
+
+        System.out.println("All these should be true:");
+        StringManipulation.checkIfPalindrome("hannah");
+        StringManipulation.checkIfPalindrome("racecar");
+        StringManipulation.checkIfPalindrome("deified");
+        StringManipulation.checkIfPalindrome("deleveled");
+
+        System.out.println("All these should be false:");
+        StringManipulation.checkIfPalindrome("hannahh");
+        StringManipulation.checkIfPalindrome("racecarrr");
+        StringManipulation.checkIfPalindrome("deifieddd");
+        StringManipulation.checkIfPalindrome("deleveledddd");
+
+
+        System.out.println("All these should be non-valid strings:");
+        StringManipulation.checkIfPalindrome("");
+        StringManipulation.checkIfPalindrome(null);
+
+        System.out.println("These should be in pig latin:");
+        StringManipulation.convertToPigLatin("hello");
+        StringManipulation.convertToPigLatin("hey");
 
     }
 }
