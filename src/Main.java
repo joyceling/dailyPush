@@ -1,5 +1,10 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println(StringManipulation.reverseAString("hello"));
+        StringManipulation stringManipulation = new StringManipulation();
+        System.out.println(stringManipulation.reverseAString("hello"));
+        stringManipulation.checkIfPalindrome("hannah");
+        stringManipulation.checkIfPalindrome("");
+        stringManipulation.checkIfPalindrome(null);
+
     }
 }
